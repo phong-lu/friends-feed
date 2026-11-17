@@ -1,0 +1,106 @@
+.friend-feed-navigation > .friend-feed-muted-tab a,
+.friend-feed-navigation > .friend-feed-muted-tab svg {
+  color: var(--secondary-icon) !important;
+}
+
+.friend-feed-navigation > .friend-feed-muted-tab svg:not([fill="none"]),
+.friend-feed-navigation > .friend-feed-muted-tab svg [fill]:not([fill="none"]) {
+  fill: var(--secondary-icon) !important;
+}
+
+.friend-feed-navigation > .friend-feed-muted-tab svg [stroke]:not([stroke="none"]) {
+  stroke: var(--secondary-icon) !important;
+}
+
+.friend-feed-navigation .friend-feed-muted-indicator {
+  background-color: transparent !important;
+}
+
+@media (min-width: 1100px) and (max-height: 789px),
+       (min-width: 1100px) and (max-width: 1379px) {
+  .friend-feed-navigation > li {
+    max-width: 90px !important;
+  }
+}
+
+#friend-feed-shortcut .friend-feed-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: var(--secondary-icon, #65676b);
+  text-decoration: none;
+}
+
+#friend-feed-shortcut .friend-feed-link::before {
+  content: "";
+  position: absolute;
+  inset: 4px 0;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#friend-feed-shortcut .friend-feed-link:hover::before {
+  background: var(--hover-overlay, rgba(128, 128, 128, 0.15));
+}
+
+#friend-feed-shortcut .friend-feed-link:focus-visible {
+  outline: 2px solid #0866ff;
+  outline-offset: -4px;
+}
+
+#friend-feed-shortcut .friend-feed-tooltip {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: var(--primary-text, #e4e6eb);
+  color: var(--card-background, #18191a);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 100ms ease, visibility 100ms;
+}
+
+#friend-feed-shortcut .friend-feed-link:hover .friend-feed-tooltip,
+#friend-feed-shortcut .friend-feed-link:focus-visible .friend-feed-tooltip {
+  visibility: visible;
+  opacity: 0.95;
+  transition-delay: 400ms;
+}
+
+#friend-feed-shortcut svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#friend-feed-shortcut .friend-feed-link[aria-current="page"] {
+  color: #0866ff;
+}
+
+#friend-feed-shortcut .friend-feed-link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: currentColor;
+}
